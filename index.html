@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TECH Care BC – Caring for your tech, making life easy. Computer support, training, and repair services in Coquitlam, Port Coquitlam, Port Moody, Burnaby, and Vancouver.">
+    <title>TECH Care BC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        header img {
+            height: 40px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #005BBB;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f5f9ff;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #005BBB;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .hero .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background: #005BBB;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            color: #005BBB;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 8px 0;
+        }
+        .pricing {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .pricing p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            background: #f5f5f5;
+            margin-top: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form textarea {
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 12px;
+            background: #005BBB;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        form button:hover {
+            background: #004599;
+        }
+    
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    header, main, footer {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .service-card {
+        flex: 1 1 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <img src="techcarebc-logo.jpg" alt="TECH Care BC Logo">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Making Technology Simple & Stress-Free</h1>
+    <p>Caring for your tech, making life easy</p>
+    <div class="buttons">
+        <a href="tel:+1-XXX-XXX-XXXX">Call Now</a>
+        <a href="#contact">Book Online</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We provide in-home, remote, and personalized tech support to help you set up, fix, and learn how to use your devices. Our goal is to save you time, reduce frustration, and keep you connected.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li><strong>In-Home & On-Site Technical Support:</strong> Device setup, troubleshooting, virus removal, printer setup, smart home devices.</li>
+        <li><strong>Personal Technology Training:</strong> Email, video calls, internet safety, social media.</li>
+        <li><strong>Remote Online Support:</strong> Secure connection, software installation, account setup.</li>
+        <li><strong>Device Maintenance & Optimization:</strong> Speed up devices, clean storage, backups, security checks.</li>
+        <li><strong>Tech Help for Seniors:</strong> Patient guidance, written instructions, regular check-ups.</li>
+    </ul>
+</section>
+
+<section id="pricing" class="pricing">
+    <h2>Pricing</h2>
+    <p>First hour of service and on-site visit: <strong>$150</strong></p>
+    <p>Each additional hour – complex technical work: <strong>$100/hour</strong></p>
+    <p>Each additional hour – basic technical work: <strong>$80/hour</strong></p>
+    <small>All prices in CAD, taxes not included.</small>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: <a href="tel:+1-XXX-XXX-XXXX">+1-XXX-XXX-XXXX</a></p>
+    <p>Email: <a href="mailto:info@techcarebc.com">info@techcarebc.com</a></p>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone">
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 TECH Care BC – Caring for your tech, making life easy.
+</footer>
+
+</body>
+</html>
