@@ -1,205 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TECH Care BC – Caring for your tech, making life easy. Computer support, training, and repair services in Coquitlam, Port Coquitlam, Port Moody, Burnaby, and Vancouver.">
-    <title>TECH Care BC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        header img {
-            height: 40px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #005BBB;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #f5f9ff;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            color: #005BBB;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        .hero .buttons a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 24px;
-            background: #005BBB;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #005BBB;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 8px 0;
-        }
-        .pricing {
-            background: #f5f5f5;
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .pricing p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            background: #f5f5f5;
-            margin-top: 40px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        form input, form textarea {
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        form button {
-            padding: 12px;
-            background: #005BBB;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        form button:hover {
-            background: #004599;
-        }
-    
-/* --- Responsive adjustments --- */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    header, main, footer {
-        padding: 10px;
-    }
-    h1 {
-        font-size: 1.8rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .service-card {
-        flex: 1 1 100%;
-    }
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechCareBC — TECHNICALCAREBRITISHCOLUMBIA | Friendly Tech Help in BC</title>
+  <meta name="description" content="TechCareBC (TECHNICALCAREBRITISHCOLUMBIA) — friendly, patient tech help in BC. In‑home support, device setup, Wi‑Fi & printer fixes, training, data backup and more. Call +1 (236) 259‑3553 or email info@techcarebc.ca, daily 8am–10pm." />
+  <meta name="theme-color" content="#1d4ed8" />
 
-</style>
-  
-  <link rel="stylesheet" href="css/overrides.css">
+  <!-- Open Graph for rich sharing -->
+  <meta property="og:title" content="TechCareBC — Making Technology Simple & Accessible" />
+  <meta property="og:description" content="In‑home & remote tech support, training, and setup for everyday users. Open daily 8am–10pm. +1 (236) 259‑3553 • info@techcarebc.ca" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_CA" />
+
+  <style>
+    /* -------------
+       Minimal, mobile‑first CSS (no external deps)
+       ------------- */
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --brand:#1d4ed8;
+      --brand-ink:#0b3aa8;
+      --radius:18px;
+      --shadow:0 6px 20px rgba(2,8,23,.06);
+      --container: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 ui-sans-serif, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--brand-ink)}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:16px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;border-radius:14px;border:1px solid var(--brand);font-weight:600;box-shadow:var(--shadow)}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn.ghost{background:#fff;color:var(--brand)}
+    .btn.block{width:100%}
+    header.sticky{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.5) blur(8px);border-bottom:1px solid var(--line);z-index:40}
+    header .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    nav a{margin-left:18px;color:#0f172a}
+    nav a:hover{color:var(--brand)}
+    /* Hero */
+    .hero{padding:44px 0 26px;background:radial-gradient(1000px 500px at 50% -300px, rgba(29,78,216,.14), transparent)}
+    .logo-big{font-size:13vw;font-weight:800;letter-spacing:.5px;line-height:1;margin:0;text-align:center;color:var(--brand)}
+    @media(min-width:640px){.logo-big{font-size:96px}}
+    .sub{margin:8px auto 0;max-width:820px;text-align:center;color:var(--muted)}
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .badge{display:inline-block;margin-top:6px;color:#64748b;font-size:.9rem}
+    /* Cards */
+    .grid{display:grid;gap:16px}
+    @media(min-width:768px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px 0}
+    .muted{color:var(--muted)}
+    /* Sections */
+    section{padding:48px 0}
+    section .title{font-size:1.9rem;margin:0 0 6px 0}
+    /* Pricing */
+    .price{font-size:2rem;font-weight:800}
+    /* Footer sticky call bar on mobile */
+    .sticky-bar{position:fixed;left:0;right:0;bottom:0;border-top:1px solid var(--line);background:#fff;backdrop-filter:saturate(1.2) blur(6px);padding:10px 14px;display:flex;gap:10px;justify-content:space-between;z-index:50}
+    @media(min-width:768px){.sticky-bar{display:none}}
+    footer{padding:72px 0 110px 0;text-align:center;border-top:1px solid var(--line);color:#64748b}
+    @media(min-width:768px){footer{padding-bottom:40px}}
+    /* Simple list style */
+    ul.clean{padding-left:18px;margin:10px 0}
+    ul.clean li{margin:6px 0}
+    /* Anchor offset for sticky header */
+    :target{scroll-margin-top:80px}
+  </style>
+
+  <!-- JSON-LD for Local/Professional Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "TechCareBC",
+    "alternateName": "TECHNICALCAREBRITISHCOLUMBIA",
+    "url": "https://example.github.io/techcarebc/",
+    "email": "info@techcarebc.ca",
+    "telephone": "+12362593553",
+    "areaServed": ["Coquitlam","Port Coquitlam","Port Moody","Burnaby","Vancouver"],
+    "openingHoursSpecification": [{
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens":"08:00",
+      "closes":"22:00"
+    }],
+    "slogan": "Caring for your tech, making life easy.",
+    "description": "Friendly, patient in-home and remote tech help: device setup, Wi‑Fi & printer fixes, training, backups, and more.",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
-
-<header>
-    <img src="techcarebc-logo.jpg" alt="TECH Care BC Logo">
-    <nav>
-        <a href="#about">About</a>
+  <header class="sticky">
+    <div class="container row">
+      <a href="#" aria-label="TechCareBC Home" style="display:flex;align-items:center;gap:10px">
+        <!-- Text-based logo for crisp scaling (replace with <img> anytime) -->
+        <div style="font-weight:800;font-size:28px;line-height:1;color:var(--brand)">TechCareBC</div>
+      </a>
+      <nav aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
+        <a href="#story">Our Story</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>Making Technology Simple & Stress-Free</h1>
-    <p>Caring for your tech, making life easy</p>
-    <div class="buttons">
-        <a href="tel:+1-XXX-XXX-XXXX">Call Now</a>
-        <a href="#contact">Book Online</a>
+        <a class="btn primary" href="tel:+12362593553">Call: (236) 259‑3553</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>We provide in-home, remote, and personalized tech support to help you set up, fix, and learn how to use your devices. Our goal is to save you time, reduce frustration, and keep you connected.</p>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container" style="text-align:center">
+        <h1 class="logo-big" aria-label="TechCareBC big logo">TechCareBC</h1>
+        <p class="sub">Caring for your tech, making life easy. Friendly, patient technology help for everyday users — at home, on‑site, or remotely.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="tel:+12362593553">Call (236) 259‑3553</a>
+          <a class="btn ghost" href="mailto:info@techcarebc.ca?subject=Tech%20Help%20Request">Email info@techcarebc.ca</a>
+        </div>
+        <div class="badge">Open daily • 8:00 AM – 10:00 PM</div>
+      </div>
+    </section>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <ul>
-        <li><strong>In-Home & On-Site Technical Support:</strong> Device setup, troubleshooting, virus removal, printer setup, smart home devices.</li>
-        <li><strong>Personal Technology Training:</strong> Email, video calls, internet safety, social media.</li>
-        <li><strong>Remote Online Support:</strong> Secure connection, software installation, account setup.</li>
-        <li><strong>Device Maintenance & Optimization:</strong> Speed up devices, clean storage, backups, security checks.</li>
-        <li><strong>Tech Help for Seniors:</strong> Patient guidance, written instructions, regular check-ups.</li>
-    </ul>
-</section>
+    <!-- Highlights -->
+    <section aria-label="At a glance">
+      <div class="container grid cols-3">
+        <div class="card">
+          <h3>Plain‑English Help</h3>
+          <p class="muted">We explain step‑by‑step without jargon and can leave written tips after each visit.</p>
+        </div>
+        <div class="card">
+          <h3>On‑Site or Remote</h3>
+          <p class="muted">We come to you across the Tri‑Cities and beyond, or fix things securely online.</p>
+        </div>
+        <div class="card">
+          <h3>Transparent Pricing</h3>
+          <p class="muted">Simple rates and only the time you actually need.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="pricing" class="pricing">
-    <h2>Pricing</h2>
-    <p>First hour of service and on-site visit: <strong>$150</strong></p>
-    <p>Each additional hour – complex technical work: <strong>$100/hour</strong></p>
-    <p>Each additional hour – basic technical work: <strong>$80/hour</strong></p>
-    <small>All prices in CAD, taxes not included.</small>
-</section>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2 class="title">Services</h2>
+        <p class="muted">Practical, friendly support for everyday technology at home or work.</p>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Phone (8:00–22:00): <a href="tel:+1-236-259-3553">+1-236-259-3553</a></p>
-    <p>Email: <a href="mailto:info@techcarebc.ca">info@techcarebc.ca</a></p>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Your Phone">
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+        <div class="grid cols-3" style="margin-top:14px">
+          <div class="card">
+            <h3>In‑Home & On‑Site Support</h3>
+            <ul class="clean">
+              <li>Setup: computers, phones, tablets, smart TVs, printers, Wi‑Fi/routers</li>
+              <li>Troubleshooting slow or malfunctioning devices</li>
+              <li>Smart‑home installs: speakers, cameras, thermostats</li>
+              <li>Data transfer between devices</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Personal Tech Training</h3>
+            <ul class="clean">
+              <li>One‑on‑one lessons (beginner to intermediate)</li>
+              <li>Email, internet safety & online services</li>
+              <li>Video calls: Zoom, FaceTime, WhatsApp, Meet</li>
+              <li>Digital photo organizing & sharing</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Remote Support</h3>
+            <ul class="clean">
+              <li>Secure remote access for quick fixes</li>
+              <li>Software installs & updates</li>
+              <li>Email and account setup</li>
+              <li>Cloud storage: Google Drive, OneDrive, Dropbox</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Maintenance & Security</h3>
+            <ul class="clean">
+              <li>Speed‑ups & storage cleanup</li>
+              <li>Backups to external drives or cloud</li>
+              <li>Virus/malware removal & safety checks</li>
+              <li>Password management guidance</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Shopping & Setup</h3>
+            <ul class="clean">
+              <li>Advice on the right device for your needs</li>
+              <li>Full setup & personalization</li>
+              <li>Travel preparation & safety tips</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Small Business Help</h3>
+            <ul class="clean">
+              <li>Workstation & printer setup</li>
+              <li>Wi‑Fi optimization</li>
+              <li>Best‑practice security & backups</li>
+              <li>Simple process automations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-    © 2025 TECH Care BC – Caring for your tech, making life easy.
-</footer>
+    <!-- PRICING -->
+    <section id="pricing" style="background:#f8fafc">
+      <div class="container">
+        <h2 class="title">Pricing</h2>
+        <p class="muted">Clear, simple rates. Only pay for the help you need.</p>
 
+        <div class="grid cols-3" style="margin-top:14px">
+          <div class="card">
+            <h3>On‑Site Visit & First Hour</h3>
+            <div class="price">$150</div>
+            <p class="muted">We come to you — includes travel and the first 60 minutes of work.</p>
+          </div>
+          <div class="card">
+            <h3>Advanced / Complex Work</h3>
+            <div class="price">$100<span style="font-size:1rem;font-weight:700">/hr</span></div>
+            <p class="muted">For deeper diagnostics, multi‑device setups, data recovery, etc.</p>
+          </div>
+          <div class="card">
+            <h3>Light Tasks & Training</h3>
+            <div class="price">$80<span style="font-size:1rem;font-weight:700">/hr</span></div>
+            <p class="muted">Quick fixes, lessons, email/social setup, photo help, and more.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="tel:+12362593553">Book a visit</a>
+          <span class="muted" aria-label="Business hours">Open daily 8:00 AM – 10:00 PM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story">
+      <div class="container">
+        <h2 class="title">Our Story</h2>
+        <p>TechCareBC — legally “TECHNICALCAREBRITISHCOLUMBIA” — was founded on <strong>August 22, 2024</strong> with a simple idea: <em>make new technologies easier and more accessible for everyone</em>. We believe technology should reduce stress, not create it. That’s why our service is friendly, patient, and practical — focused on real‑life tasks and clear results.</p>
+      </div>
+    </section>
+
+    <!-- AREA & HOURS -->
+    <section style="background:#f8fafc">
+      <div class="container grid cols-2">
+        <div class="card">
+          <h3>Service Area</h3>
+          <p class="muted">Coquitlam • Port Coquitlam • Port Moody • Burnaby • Vancouver and nearby communities.</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <p class="muted">Open daily: <strong>8:00 AM – 10:00 PM</strong></p>
+          <p class="muted" style="font-size:.95rem">Same‑day appointments often available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container" style="text-align:center;max-width:760px">
+        <h2 class="title">Contact Us</h2>
+        <p class="muted">Reach out any day between 8:00 AM and 10:00 PM.</p>
+        <div style="display:flex;gap:10px;flex-direction:column;align-items:center;max-width:520px;margin:14px auto 0">
+          <a class="btn primary block" href="tel:+12362593553">Call (236) 259‑3553</a>
+          <a class="btn ghost block" href="mailto:info@techcarebc.ca?subject=Tech%20Help%20Request">Email info@techcarebc.ca</a>
+        </div>
+        <p class="muted" style="margin-top:6px;font-size:.95rem">Prefer a callback? Email us your name, location, and a short description of the issue.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="sticky-bar" role="navigation" aria-label="Quick contact">
+    <a class="btn primary" href="tel:+12362593553">Call</a>
+    <a class="btn ghost" href="mailto:info@techcarebc.ca?subject=Tech%20Help%20Request">Email</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> TechCareBC — TECHNICALCAREBRITISHCOLUMBIA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
