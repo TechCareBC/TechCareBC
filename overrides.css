@@ -1,0 +1,76 @@
+/* === Minimal Logo Emphasis Overrides (v2) ===
+   Drop this file after your main stylesheet in <head>.
+   Focus: bigger logo, more whitespace, subtle attention without breaking layout.
+*/
+:root{
+  --logo-max-width: clamp(140px, 12vw, 220px);
+  --logo-opacity: 0.98;
+  --logo-hover-scale: 1.025;
+}
+
+header .logo, .site-logo, .brand, .navbar-brand, .logo-wrap, .logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+header .logo img,
+.site-logo img,
+.navbar-brand img,
+.logo img,
+.logo-wrap img,
+.logo-container img {
+  height: auto !important;
+  max-height: none !important;
+  width: var(--logo-max-width) !important;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  opacity: var(--logo-opacity);
+  transition: transform 220ms ease, opacity 220ms ease, filter 220ms ease;
+}
+
+/* If the brand name (text) sits next to the logo */
+header .logo span,
+.site-logo span,
+.navbar-brand span,
+.logo span,
+.brand-name,
+.brand__name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Add a little breathing room around the header so the logo stands out */
+header, .site-header, .topbar, .navbar {
+  padding-block: clamp(14px, 2.2vw, 28px) !important;
+}
+
+/* Very subtle hover to draw attention without being flashy */
+header .logo:hover img,
+.site-logo:hover img,
+.navbar-brand:hover img,
+.logo:hover img {
+  transform: scale(var(--logo-hover-scale));
+  filter: drop-shadow(0 1px 8px rgba(0,0,0,0.06));
+  opacity: 1;
+}
+
+/* On small screens ensure the logo remains prominent */
+@media (max-width: 640px) {
+  :root{ --logo-max-width: clamp(120px, 38vw, 200px); }
+  header, .site-header, .topbar, .navbar { padding-block: 12px !important; }
+}
+
+/* Ensure we catch simple markup like <header><img ...> */
+header > img {
+  width: var(--logo-max-width) !important;
+  height: auto !important;
+  opacity: var(--logo-opacity);
+  transition: transform 220ms ease, opacity 220ms ease, filter 220ms ease;
+}
+
+header:hover > img {
+  transform: scale(var(--logo-hover-scale));
+  filter: drop-shadow(0 1px 8px rgba(0,0,0,0.06));
+  opacity: 1;
+}
